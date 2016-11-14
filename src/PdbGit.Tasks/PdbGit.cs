@@ -4,7 +4,6 @@ namespace PdbGit.Tasks
 {
     using System;
     using Catel.Logging;
-    using global::GitLink;
     using Microsoft.Build.Framework;
     using Microsoft.Build.Utilities;
 

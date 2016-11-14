@@ -2,7 +2,7 @@
 //   Copyright (c) 2014 - 2016 CatenaLogic. All rights reserved.
 // </copyright>
 
-namespace GitLink.Providers
+namespace PdbGit.Providers
 {
     using System.Text.RegularExpressions;
     using GitTools.Git;

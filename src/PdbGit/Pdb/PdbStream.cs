@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace GitLink.Pdb
+namespace PdbGit.Pdb
 {
     internal class PdbStream
     {

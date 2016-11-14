@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace GitLink.Pdb
+namespace PdbGit.Pdb
 {
     using System;
     using System.Collections.Generic;

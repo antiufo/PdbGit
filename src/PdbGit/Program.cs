@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace GitLink
+namespace PdbGit
 {
     using System;
     using System.CommandLine;

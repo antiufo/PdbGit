@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace GitLink.Logging
+namespace PdbGit.Logging
 {
     using System;
     using Catel.Logging;

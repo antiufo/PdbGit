@@ -6,7 +6,7 @@
     <ProjectGuid>{ED2B9579-59D2-40F2-BC5E-F4DC3DAB9A56}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GitLink.Tests</RootNamespace>
+    <RootNamespace>PdbGit.Tests</RootNamespace>
     <AssemblyName>PdbGit.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace GitLink.Tests.IntegrationTests
+namespace PdbGit.Tests.IntegrationTests
 {
     using NUnit.Framework;
 

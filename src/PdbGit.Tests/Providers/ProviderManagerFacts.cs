@@ -4,10 +4,10 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace GitLink.Tests.Providers
+namespace PdbGit.Tests.Providers
 {
     using System;
-    using GitLink.Providers;
+    using PdbGit.Providers;
     using NUnit.Framework;
 
     public class ProviderManagerFacts

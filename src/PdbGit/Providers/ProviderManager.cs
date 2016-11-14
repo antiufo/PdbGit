@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace GitLink.Providers
+namespace PdbGit.Providers
 {
     using Catel.IoC;
     using Catel.Reflection;

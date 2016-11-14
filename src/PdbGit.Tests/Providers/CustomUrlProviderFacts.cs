@@ -2,14 +2,14 @@
 //   Copyright (c) 2014 - 2016 CatenaLogic. All rights reserved.
 // </copyright>
 
-namespace GitLink.Tests.Providers
+namespace PdbGit.Tests.Providers
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    using GitLink.Providers;
+    using PdbGit.Providers;
     using NUnit.Framework;
 
     public class CustomUrlProviderFacts

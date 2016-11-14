@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace GitLink.Tests.IntegrationTests
+namespace PdbGit.Tests.IntegrationTests
 {
     using System;
     using System.Diagnostics;
@@ -12,7 +12,7 @@ namespace GitLink.Tests.IntegrationTests
     using ApprovalTests;
     using Catel.Logging;
     using Catel.Reflection;
-    using GitLink.Providers;
+    using PdbGit.Providers;
     using Microsoft.Win32;
 
     public class IntegrationTestBase

@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace GitLink
+namespace PdbGit
 {
     /// <summary>
     /// The styles of operations a SRCSRV can perform to retrieve the source code.
