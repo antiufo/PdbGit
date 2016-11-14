@@ -35,13 +35,19 @@
     <NoDefaultExcludes>true</NoDefaultExcludes>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="build\PdbGit.props">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="build\PdbGit.targets" />
     <Content Include="tools\LICENSE.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PdbGit.Tasks\PdbGit.Tasks.csproj" />
+    <ProjectReference Include="..\PdbGit.Tasks\PdbGit.Tasks.csproj">
+      <PackageDirectory>Tools</PackageDirectory>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(NuProjPath)\NuProj.targets" />
 </Project>
