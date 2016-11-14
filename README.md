@@ -120,4 +120,24 @@ Possible workarounds
 * Include a mechanism in the pdb to retrieve credentials (using PowerShell and Windows credentials store) (see [#37](https://github.com/GitTools/GitLink/issues/37))
 * Use a proxy service that does not require authentication (see [#66](https://github.com/GitTools/GitLink/issues/66) and [Source server with Git repository](https://shonnlyga.wordpress.com/2016/05/28/source-server-with-git-repository))
 
+# History
+
+PdbGit is a fork of [GitLink][Upstream], which was a project where great contributors did the heavy lifting of reverse-engineering Microsoft's PDB file format in order to add source server support for Git. This fork became permanent and was renamed to PdbGit when GitLink committers [resisted](https://github.com/GitTools/GitLink/pull/110) accepting pull requests that added significant value to their project and simplified usage, including:
+
+1. Installing the GitLink nuget package into a project automatically activates GitLink in that project's build. The README instructions are updated to reflect just how easy it is now compared to before.
+2. gitlink.exe is now focused on the PDB instead of Visual Studio solutions. The only argument required is the PDB file. Everything else is automatic.
+3. pdb file information always has the canonical capitalization expected by the web server.
+4. added support for PDBs that carry SHA1 hashes instead of MD5. I don't know who still uses MD5, but csc.exe seems to always produce SHA1 hashes.
+5. packages.config have been migrated to project.json, resulting in cleaner, simpler build authoring that's easier to manage.
+6. packages and assemblies versioned with git information.
+7. NuGet package builds with the same MSBuild invocation that builds the solution. And if the NuProj extension for VS is installed, it builds within VS as well.
+8. Builds on appveyor. Once this PR is accepted, appveyor should be added to this repo and the README badge can be updated to point to your appveyor build instead of mine.
+9. Print out how many files ended up getting indexed into the PDB, to make noticing issues easier.
+10. Tests are upgraded to NUnit 3, and the NUnit test adapter for VS is added so that tests automatically run in VS even for folks who haven't installed the NUnit extension.
+11. Recognize and report failure even when pdbstr.exe fails with a 0 exit code.
+12. README file is reordered to emphasize benefits and usage instructions over troubleshooting and how it works internally.
+13. GitLink NuPkg is ready for chocolatey. That is, the same package for nuget.org also works on chocolatey directly. 
+14. nupkg license points at the exact license that produced the package rather than the tip of 'develop', which may have diverged from what the package was built with. (mostly theoretical, but sound).
+
 [NuGetDownload]: https://www.nuget.org/packages/PdbGit
+[Upstream]: https://github.com/gittools/gitlink
