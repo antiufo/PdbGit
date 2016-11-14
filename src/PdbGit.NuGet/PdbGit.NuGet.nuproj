@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>29e78909-b7fb-472c-a9a0-1749a8be9a9a</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NuProjPath>$(UserProfile)\.nuget\packages\NuProj\0.11.14-beta\tools</NuProjPath>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
+  <PropertyGroup Label="Configuration">
+    <Id>PdbGit</Id>
+    <Title>PDB Source Server Support for Git</Title>
+    <Authors>AArnott</Authors>
+    <Owners>AArnott</Owners>
+    <Description>Indexes your PDBs with online Git server URLs so Visual Studio can download the exact source files that were compiled into your assembly while debugging.</Description>
+    <ReleaseNotes>
+    </ReleaseNotes>
+    <ProjectUrl>https://github.com/aarnott/PdbGit</ProjectUrl>
+    <LicenseUrl>https://github.com/aarnott/PdbGit/blob/$GitCommitIdShort$/LICENSE</LicenseUrl>
+    <Tags>git pdb</Tags>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <IconUrl>https://raw.githubusercontent.com/aarnott/PdbGit/$GitCommitIdShort$/design/logo/logo_64.png</IconUrl>
+    <PackageOutputGroups>GetDeployableOutputs</PackageOutputGroups>
+    <Summary />
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="build\PdbGit.props">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="build\PdbGit.targets" />
+    <Content Include="tools\LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PdbGit.Tasks\PdbGit.Tasks.csproj">
+      <PackageDirectory>Tools</PackageDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(NuProjPath)\NuProj.targets" />
+</Project>
