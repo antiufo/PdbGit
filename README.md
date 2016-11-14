@@ -43,25 +43,26 @@ The PDB file already has paths to your local files in it. The command line tool 
 behind those files, the remote git server, and creates the URLs for them and adds them to the PDB file.
 The tool emits warnings if the source files on disk do not match the versions used to compile the PDB.
 
+### When your project has not .git folder
+
+If running in an environment where there is no .git folder (e.g. some CI server that only downloads the latest source
+as a .tgz), you can still use PdbGit by specifying extra parameters:
+
+PdbGit.exe path-to-your.pdb -u https://github.com/username/project --baseDir C:\root-of-your-project\ --commit your-commit-ID
+
 ### Running for a custom raw content URL
 
 When working with a content proxy or an alternative git VCS system that supports direct HTTP access to specific file revisions use the `-u` parameter with the custom raw content root URL
 
-    PdbGit.exe c:\source\catel -u https://raw.githubusercontent.com/catel/catel
+    PdbGit.exe path-to-your.pdb -u https://raw.githubusercontent.com/catel/catel
     
 The custom url will be used to fill in the following pattern `{customUrl}/{revision}/{relativeFilePath}` when generating the source mapping.
 
 When working with a repository using uncommon URL you can use placeholders to specify where the filename and revision hash should be, use `-u` parameter with the custom URL
 
-    PdbGit.exe c:\source\catel -u "https://host/projects/catel/repos/catel/browse/{filename}?at={revision}&raw"
+    PdbGit.exe path-to-your.pdb -u "https://host/projects/catel/repos/catel/browse/{filename}?at={revision}&raw"
 
 The custom url will be used to fill the placeholders with the relative file path and the revision hash.
-
-### Logging to a file
-
-When you need to log the information to a file, use the following command line:
-
-    PdbGit.exe c:\source\catel -u https://github.com/catel/catel -b develop -l PdbGitLog.log
 
 ### More options
 
