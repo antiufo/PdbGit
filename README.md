@@ -40,6 +40,10 @@ Using PdbGit via the command line is very simple:
 
     PdbGit.exe <pdbfile>
 
+The PDB file already has paths to your local files in it. The command line tool simply discovers the git repo
+behind those files, the remote git server, and creates the URLs for them and adds them to the PDB file.
+The tool emits warnings if the source files on disk do not match the versions used to compile the PDB.
+
 ### Running for a custom raw content URL
 
 When working with a content proxy or an alternative git VCS system that supports direct HTTP access to specific file revisions use the `-u` parameter with the custom raw content root URL
