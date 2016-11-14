@@ -48,7 +48,7 @@ The tool emits warnings if the source files on disk do not match the versions us
 If running in an environment where there is no .git folder (e.g. some CI server that only downloads the latest source
 as a .tgz), you can still use PdbGit by specifying extra parameters:
 
-PdbGit.exe path-to-your.pdb -u https://github.com/username/project --baseDir C:\root-of-your-project\ --commit your-commit-ID
+    PdbGit.exe path-to-your.pdb -u https://github.com/username/project --baseDir C:\root-of-your-project\ --commit your-commit-ID
 
 ### Running for a custom raw content URL
 
