@@ -1,6 +1,6 @@
 ﻿// Copyright (c) Andrew Arnott. All rights reserved.
 
-namespace PdbGitTask
+namespace PdbGit.Tasks
 {
     using System;
     using Catel.Logging;

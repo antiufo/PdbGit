@@ -38,12 +38,10 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PdbGitTask\PdbGitTask.csproj">
-      <PackageDirectory>Build</PackageDirectory>
-    </ProjectReference>
+    <Content Include="tools\LICENSE.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="tools\LICENSE.txt" />
+    <ProjectReference Include="..\PdbGit.Tasks\PdbGit.Tasks.csproj" />
   </ItemGroup>
   <Import Project="$(NuProjPath)\NuProj.targets" />
 </Project>

@@ -7,8 +7,8 @@
     <ProjectGuid>{38BFDD5A-8CC2-43B8-96CE-BC572E3DFEF5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PdbGitTask</RootNamespace>
-    <AssemblyName>PdbGitTask</AssemblyName>
+    <RootNamespace>PdbGit.Tasks</RootNamespace>
+    <AssemblyName>PdbGit.Tasks</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -17,27 +17,27 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\output\debug\PdbGitTask\</OutputPath>
+    <OutputPath>..\..\output\debug\PdbGit.Tasks\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <NoWarn>1591;1998</NoWarn>
-    <DocumentationFile>..\..\bin\Debug\PdbGitTask\PdbGitTask.XML</DocumentationFile>
-    <CodeAnalysisRuleSet>PdbGitTask.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\..\bin\Debug\PdbGit.Tasks\PdbGit.Tasks.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>PdbGit.Tasks.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\output\release\PdbGitTask\</OutputPath>
+    <OutputPath>..\..\output\release\PdbGit.Tasks\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>1591;1998</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>..\..\bin\Release\PdbGitTask\PdbGitTask.XML</DocumentationFile>
-    <CodeAnalysisRuleSet>PdbGitTask.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\..\bin\Release\PdbGit.Tasks\PdbGit.Tasks.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>PdbGit.Tasks.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -62,7 +62,7 @@
     <None Include="PdbGit.targets">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="PdbGitTask.ruleset" />
+    <None Include="PdbGit.Tasks.ruleset" />
     <None Include="project.json" />
     <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>
