@@ -1,12 +1,11 @@
 PdbGit
 ==========
 
-[![Build status](https://ci.appveyor.com/api/projects/status/g56b4xyl4q0ean8i/branch/develop?svg=true)](https://ci.appveyor.com/project/AArnott/gitlink/branch/develop)
+[![Build status](https://ci.appveyor.com/api/projects/status/x2kj88duew7fmr9f/branch/master?svg=true)](https://ci.appveyor.com/project/AArnott/pdbgit/branch/master)
 
-[![Join the chat at https://gitter.im/AArnott/PdbGit](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AArnott/PdbGit?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/PdbGit/Lobby](https://badges.gitter.im/PdbGit/Lobby.svg)](https://gitter.im/PdbGit/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ![License](https://img.shields.io/github/license/aarnott/PdbGit.svg)
-[![NuGet downloads](https://img.shields.io/nuget/dt/PdbGit.svg)][NuGetDownload]
 [![Version](https://img.shields.io/nuget/v/PdbGit.svg)][NuGetDownload]
 [![Pre-release version](https://img.shields.io/nuget/vpre/PdbGit.svg)][NuGetDownload]
 
