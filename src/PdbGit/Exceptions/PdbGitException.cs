@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="GitLinkException.cs" company="CatenaLogic">
+// <copyright file="PdbGitException.cs" company="CatenaLogic">
 //   Copyright (c) 2014 - 2016 CatenaLogic. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -8,9 +8,9 @@ namespace GitLink
 {
     using System;
 
-    public class GitLinkException : Exception
+    public class PdbGitException : Exception
     {
-        public GitLinkException(string message)
+        public PdbGitException(string message)
             : base(message)
         {
         }

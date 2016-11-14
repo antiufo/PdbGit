@@ -10,7 +10,7 @@ cache:
 before_build:
 - ps: .\init.ps1
 build:
-  project: src\GitLink.sln
+  project: src\PdbGit.sln
   parallel: true
   verbosity: minimal
 artifacts:

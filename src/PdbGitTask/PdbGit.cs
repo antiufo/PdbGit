@@ -1,6 +1,6 @@
 ﻿// Copyright (c) Andrew Arnott. All rights reserved.
 
-namespace GitLinkTask
+namespace PdbGitTask
 {
     using System;
     using Catel.Logging;
@@ -8,7 +8,7 @@ namespace GitLinkTask
     using Microsoft.Build.Framework;
     using Microsoft.Build.Utilities;
 
-    public class GitLink : Task
+    public class PdbGit : Task
     {
         [Required]
         public ITaskItem PdbFile { get; set; }

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitLink", "GitLink\GitLink.csproj", "{D68ADD77-913F-46D2-9A4F-5CC71C4718D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdbGit", "PdbGit\PdbGit.csproj", "{D68ADD77-913F-46D2-9A4F-5CC71C4718D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitLink.Tests", "GitLink.Tests\GitLink.Tests.csproj", "{ED2B9579-59D2-40F2-BC5E-F4DC3DAB9A56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdbGit.Tests", "PdbGit.Tests\PdbGit.Tests.csproj", "{ED2B9579-59D2-40F2-BC5E-F4DC3DAB9A56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitLinkTask", "GitLinkTask\GitLinkTask.csproj", "{38BFDD5A-8CC2-43B8-96CE-BC572E3DFEF5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdbGitTask", "PdbGitTask\PdbGitTask.csproj", "{38BFDD5A-8CC2-43B8-96CE-BC572E3DFEF5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DADE411A-78DD-4586-B06C-E3991077DF76}"
 	ProjectSection(SolutionItems) = preProject
@@ -20,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		version.json = version.json
 	EndProjectSection
 EndProject
-Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "GitLink.NuGet", "GitLink.NuGet\GitLink.NuGet.nuproj", "{29E78909-B7FB-472C-A9A0-1749A8BE9A9A}"
+Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "PdbGit.NuGet", "PdbGit.NuGet\PdbGit.NuGet.nuproj", "{29E78909-B7FB-472C-A9A0-1749A8BE9A9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

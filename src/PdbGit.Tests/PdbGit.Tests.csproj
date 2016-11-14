@@ -7,7 +7,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GitLink.Tests</RootNamespace>
-    <AssemblyName>GitLink.Tests</AssemblyName>
+    <AssemblyName>PdbGit.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -23,24 +23,24 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\output\debug\GitLink.Tests\</OutputPath>
+    <OutputPath>..\..\output\debug\PdbGit.Tests\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\bin\Debug\GitLink.Tests\GitLink.Tests.XML</DocumentationFile>
+    <DocumentationFile>..\..\bin\Debug\PdbGit.Tests\PdbGit.Tests.XML</DocumentationFile>
     <NoWarn>CS1591</NoWarn>
-    <CodeAnalysisRuleSet>GitLink.Tests.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>PdbGit.Tests.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\output\release\GitLink.Tests\</OutputPath>
+    <OutputPath>..\..\output\release\PdbGit.Tests\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\bin\Release\GitLink.Tests\GitLink.Tests.XML</DocumentationFile>
+    <DocumentationFile>..\..\bin\Release\PdbGit.Tests\PdbGit.Tests.XML</DocumentationFile>
     <NoWarn>CS1591</NoWarn>
-    <CodeAnalysisRuleSet>GitLink.Tests.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>PdbGit.Tests.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Build" />
@@ -69,9 +69,9 @@
     <Compile Include="Providers\ProviderManagerFacts.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GitLink\GitLink.csproj">
+    <ProjectReference Include="..\PdbGit\PdbGit.csproj">
       <Project>{d68add77-913f-46d2-9a4f-5cc71c4718d8}</Project>
-      <Name>GitLink</Name>
+      <Name>PdbGit</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -91,10 +91,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <AdditionalFiles Include="..\GitLink\stylecop.json">
+    <AdditionalFiles Include="..\PdbGit\stylecop.json">
       <Link>stylecop.json</Link>
     </AdditionalFiles>
-    <None Include="GitLink.Tests.ruleset" />
+    <None Include="PdbGit.Tests.ruleset" />
     <None Include="project.json" />
   </ItemGroup>
   <Choose>

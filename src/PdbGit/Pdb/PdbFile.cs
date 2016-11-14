@@ -85,7 +85,7 @@ namespace GitLink.Pdb
             var bytes = Encoding.UTF8.GetBytes(msf);
             if (!bytes.SequenceEqual(_br.ReadBytes(32)))
             {
-                throw Log.ErrorAndCreateException<GitLinkException>("Pdb header didn't match");
+                throw Log.ErrorAndCreateException<PdbGitException>("Pdb header didn't match");
             }
         }
 
@@ -107,7 +107,7 @@ namespace GitLink.Pdb
             var length = _fs.Length;
             if (length % _pageByteCount != 0)
             {
-                throw Log.ErrorAndCreateException<GitLinkException>(
+                throw Log.ErrorAndCreateException<PdbGitException>(
                     "pdb length {0} bytes per page <> 0, {1}, {2}",
                     length,
                     _pageByteCount,
@@ -116,7 +116,7 @@ namespace GitLink.Pdb
 
             if (length / _pageByteCount != PageCount)
             {
-                throw Log.ErrorAndCreateException<GitLinkException>(
+                throw Log.ErrorAndCreateException<PdbGitException>(
                     "pdb length does not match page count, length: {0}, bytes per page: {1}, page count: {2}",
                     length,
                     _pageByteCount,
@@ -207,7 +207,7 @@ namespace GitLink.Pdb
             var read = _br.Read(bytes, offset, count);
             if (read != count)
             {
-                throw Log.ErrorAndCreateException<GitLinkException>("tried reading {0} bytes at offset {1}, but only read {2}", count, offset, read);
+                throw Log.ErrorAndCreateException<PdbGitException>("tried reading {0} bytes at offset {1}, but only read {2}", count, offset, read);
             }
         }
 
@@ -251,7 +251,7 @@ namespace GitLink.Pdb
             var root = GetRoot();
             if (root.Streams.Count <= 1)
             {
-                throw Log.ErrorAndCreateException<GitLinkException>(
+                throw Log.ErrorAndCreateException<PdbGitException>(
                     "Expected at least 2 streams inside the pdb root, but only found '{0}', cannot read pdb info",
                     root.Streams.Count);
             }
@@ -303,7 +303,7 @@ namespace GitLink.Pdb
 
                     if (positions.Count != nameCount)
                     {
-                        throw Log.ErrorAndCreateException<GitLinkException>("names count, {0} <> {1}", positions.Count, nameCount);
+                        throw Log.ErrorAndCreateException<PdbGitException>("names count, {0} <> {1}", positions.Count, nameCount);
                     }
 
                     var tailByteCount = GetRoot().Streams[1].ByteCount - br.BaseStream.Position;

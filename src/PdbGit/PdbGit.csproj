@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GitLink</RootNamespace>
-    <AssemblyName>GitLink</AssemblyName>
+    <AssemblyName>PdbGit</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -23,8 +23,8 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>..\..\bin\Debug\GitLink\GitLink.XML</DocumentationFile>
-    <CodeAnalysisRuleSet>GitLink.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\..\bin\Debug\PdbGit\PdbGit.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>PdbGit.ruleset</CodeAnalysisRuleSet>
     <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -36,8 +36,8 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>..\..\bin\Release\GitLink\GitLink.XML</DocumentationFile>
-    <CodeAnalysisRuleSet>GitLink.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\..\bin\Release\PdbGit\PdbGit.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>PdbGit.ruleset</CodeAnalysisRuleSet>
     <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -61,7 +61,7 @@
   <ItemGroup>
     <Compile Include="Extensions\BinaryReaderExtensions.cs" />
     <Compile Include="Extensions\PdbExtensions.cs" />
-    <Compile Include="Exceptions\GitLinkException.cs" />
+    <Compile Include="Exceptions\PdbGitException.cs" />
     <Compile Include="Helpers\PdbStrHelper.cs" />
     <Compile Include="Linker.cs" />
     <Compile Include="LinkMethod.cs" />
@@ -87,7 +87,7 @@
     <Compile Include="Providers\VisualStudioTeamServicesProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="GitLink.ruleset" />
+    <None Include="PdbGit.ruleset" />
     <None Include="pdbstr.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

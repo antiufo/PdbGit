@@ -3,9 +3,9 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("GitLinkTask")]
-[assembly: AssemblyProduct("GitLinkTask")]
-[assembly: AssemblyDescription("GitLinkTask library")]
+[assembly: AssemblyTitle("PdbGitTask")]
+[assembly: AssemblyProduct("PdbGitTask")]
+[assembly: AssemblyDescription("PdbGitTask library")]
 
 #if !PCL
 [assembly: ComVisible(false)]
