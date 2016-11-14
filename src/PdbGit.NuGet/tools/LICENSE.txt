@@ -1,10 +1,8 @@
-﻿From: https://github.com/GitTools/GitLink/blob/develop/LICENSE
-
-LICENSE
+﻿From: https://github.com/AArnott/PdbGit/blob/master/LICENSE
 
 The MIT License (MIT)
 
-Copyright (c) 2014 - 2016 CatenaLogic
+Copyright (c) 2016 Andrew Arnott
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
