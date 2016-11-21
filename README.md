@@ -7,7 +7,7 @@ PdbGit
 
 ![License](https://img.shields.io/github/license/aarnott/PdbGit.svg)
 [![Version](https://img.shields.io/nuget/v/PdbGit.svg)][NuGetDownload]
-[![Pre-release version](https://img.shields.io/nuget/vpre/PdbGit.svg)][NuGetDownload]
+![Chocolatey version](https://img.shields.io/chocolatey/v/PdbGit.svg)
 
 PdbGit lets users step through your code hosted on GitHub!
 Just install the [PdbGit][NuGetDownload] NuGet package to your project.
