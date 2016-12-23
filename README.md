@@ -54,7 +54,7 @@ as a .tgz), you can still use PdbGit by specifying extra parameters:
 
 When working with a content proxy or an alternative git VCS system that supports direct HTTP access to specific file revisions use the `-u` parameter with the custom raw content root URL
 
-    PdbGit.exe path-to-your.pdb -u https://raw.githubusercontent.com/catel/catel
+    PdbGit.exe <pdbfile> -u https://raw.githubusercontent.com/catel/catel
     
 The custom url will be used to fill in the following pattern `{customUrl}/{revision}/{relativeFilePath}` when generating the source mapping.
 
@@ -83,7 +83,7 @@ It then searches for a git repo that contains those source files and looks up th
 It also searches your remotes for a URL pattern that it recognizes (e.g. https://github.com/name/repo).
 It combines the URL and the commit ID to create a unique URL for each source file of this exact version, and adds this information to your PDB.
 
-When you share your PDB alongside your DLL, your users who debug with Source Server support enabled will automatically be able to step into your source code. 
+When you share your PDB alongside your assembly, your users who debug with Source Server support enabled will automatically be able to step into your source code. 
 
 # Supported git providers
 
