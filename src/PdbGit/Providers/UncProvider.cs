@@ -4,8 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-
-namespace GitLink.Providers
+namespace PdbGit.Providers
 {
     using System.Text.RegularExpressions;
     using GitTools.Git;

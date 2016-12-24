@@ -4,8 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-
-namespace GitLink.Providers
+namespace PdbGit.Providers
 {
     /// <summary>
     /// Implementing this interface path resolver gives provider a change to determine

@@ -6,7 +6,7 @@
 
 namespace GitLink.Tests.Providers
 {
-    using GitLink.Providers;
+    using PdbGit.Providers;
     using NUnit.Framework;
 
     public class VisualStudioTeamServicesProviderFacts
