@@ -61,6 +61,7 @@
     <Compile Include="Exceptions\PdbGitException.cs" />
     <Compile Include="Extensions\RepositoryExtensions.cs" />
     <Compile Include="Helpers\PdbStrHelper.cs" />
+    <Compile Include="HgRepository.cs" />
     <Compile Include="Linker.cs" />
     <Compile Include="LinkMethod.cs" />
     <Compile Include="LinkOptions.cs" />

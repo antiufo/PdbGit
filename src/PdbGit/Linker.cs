@@ -42,10 +42,19 @@ namespace PdbGit
             using (var pdb = new PdbFile(pdbPath))
             {
                 sourceFiles = pdb.GetFilesAndChecksums().Keys.ToList();
+                var isHg = false;
 
                 if (options.GitWorkingDirectory != null)
                 {
-                    repositoryDirectory = Path.Combine(options.GitWorkingDirectory, ".git");
+                    repositoryDirectory = Path.Combine(options.GitWorkingDirectory, ".hg");
+                    if (Directory.Exists(repositoryDirectory))
+                    {
+                        isHg = true;
+                    }
+                    else
+                    {
+                        repositoryDirectory = Path.Combine(options.GitWorkingDirectory, ".git");
+                    }
                 }
                 else
                 {
@@ -59,17 +68,35 @@ namespace PdbGit
                     repositoryDirectory = GitDirFinder.TreeWalkForGitDir(Path.GetDirectoryName(someSourceFile));
                     if (repositoryDirectory == null)
                     {
-                        Log.Error("No source files found that are tracked in a git repo.");
+                        var folder = Path.GetDirectoryName(someSourceFile);
+                        while (!Directory.Exists(Path.Combine(folder, ".hg")) && folder != null)
+                        {
+                            folder = Path.GetDirectoryName(folder);
+                        }
+
+                        if (folder != null)
+                        {
+                            isHg = true;
+                            repositoryDirectory = Path.Combine(folder, ".hg");
+                        }
+                    }
+
+                    if (repositoryDirectory == null)
+                    {
+                        Log.Error("No source files found that are tracked in a git or hg repo.");
                         return false;
                     }
                 }
 
                 string workingDirectory = Path.GetDirectoryName(repositoryDirectory);
 
-                var repository = new Lazy<Repository>(() => new Repository(repositoryDirectory));
+
+
+                var repository = isHg ? null : new Lazy<Repository>(() => new Repository(repositoryDirectory));
+                var hgRepository = isHg ? new HgRepository(repositoryDirectory) : null;
                 try
                 {
-                    string commitId = options.CommitId ?? repository.Value.Head.Commits.FirstOrDefault()?.Sha;
+                    string commitId = options.CommitId ?? hgRepository?.GetCurrentChangeset() ?? repository.Value.Head.Commits.FirstOrDefault()?.Sha;
                     if (commitId == null)
                     {
                         Log.Error("No commit is checked out to HEAD. Have you committed yet?");
@@ -80,7 +107,8 @@ namespace PdbGit
                     Providers.IProvider provider;
                     if (options.GitRemoteUrl == null)
                     {
-                        var candidateProviders = from remote in repository.Value.Network.Remotes
+                        var candidateProviders = isHg ? hgRepository.GetRemotes().Select(x => providerManager.GetProvider(x)).Where(x => x != null) :
+                                                 from remote in repository.Value.Network.Remotes
                                                  let p = providerManager.GetProvider(remote.Url)
                                                  where p != null
                                                  select p;
@@ -97,16 +125,23 @@ namespace PdbGit
                         return false;
                     }
 
-                    try
+                    if (isHg)
                     {
-                        Repository repo = repository.Value;
-                        repoSourceFiles = sourceFiles.ToDictionary(e => e, e => repo.GetNormalizedPath(e));
-                    }
-                    catch (RepositoryNotFoundException)
-                    {
-                        // Normalize using file system since we can't find the git repo.
-                        Log.Warning($"Unable to find git repo at \"{options.GitWorkingDirectory}\". Using file system to find canonical capitalization of file paths.");
                         repoSourceFiles = sourceFiles.ToDictionary(e => e, e => GetNormalizedPath(e, workingDirectory));
+                    }
+                    else
+                    {
+                        try
+                        {
+                            Repository repo = repository.Value;
+                            repoSourceFiles = sourceFiles.ToDictionary(e => e, e => repo.GetNormalizedPath(e));
+                        }
+                        catch (RepositoryNotFoundException)
+                        {
+                            // Normalize using file system since we can't find the git repo.
+                            Log.Warning($"Unable to find git repo at \"{options.GitWorkingDirectory}\". Using file system to find canonical capitalization of file paths.");
+                            repoSourceFiles = sourceFiles.ToDictionary(e => e, e => GetNormalizedPath(e, workingDirectory));
+                        }
                     }
 
                     if (!options.SkipVerify)
@@ -172,7 +207,7 @@ namespace PdbGit
                 }
                 finally
                 {
-                    if (repository.IsValueCreated)
+                    if (repository != null && repository.IsValueCreated)
                     {
                         repository.Value.Dispose();
                     }
