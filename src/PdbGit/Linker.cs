@@ -39,6 +39,8 @@ namespace PdbGit
             string repositoryDirectory;
             IReadOnlyCollection<string> sourceFiles;
             IReadOnlyDictionary<string, string> repoSourceFiles;
+            Guid signature;
+            int age;
             using (var pdb = new PdbFile(pdbPath))
             {
                 sourceFiles = pdb.GetFilesAndChecksums().Keys.ToList();
@@ -199,6 +201,8 @@ namespace PdbGit
                     }
 
                     CreateSrcSrv(projectSrcSrvFile, srcSrvContext);
+                    age = pdb.Info.Age;
+                    signature = pdb.Info.Guid;
                 }
                 catch (RepositoryNotFoundException)
                 {
@@ -216,6 +220,9 @@ namespace PdbGit
 
             Log.Debug("Created source server link file, updating pdb file \"{0}\"", Catel.IO.Path.GetRelativePath(pdbPath, repositoryDirectory));
             PdbStrHelper.Execute(PdbStrExePath, pdbPath, projectSrcSrvFile);
+
+            PdbAgeModification.RestoreAge(pdbPath, age + 1, age, signature);
+
             var indexedFilesCount = repoSourceFiles.Values.Count(v => v != null);
             Log.Info($"Remote git source information for {indexedFilesCount}/{sourceFiles.Count} files written to pdb: \"{pdbPath}\"");
 
