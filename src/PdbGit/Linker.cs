@@ -160,9 +160,9 @@ namespace PdbGit
                     string rawUrl = provider.RawGitUrl;
                     if (rawUrl.Contains(RevisionPlaceholder) || rawUrl.Contains(FilenamePlaceholder))
                     {
-                        if (!rawUrl.Contains(RevisionPlaceholder) || !rawUrl.Contains(FilenamePlaceholder))
+                        if (!rawUrl.Contains(FilenamePlaceholder))
                         {
-                            Log.Error("Supplied custom URL pattern must contain both a revision and a filename placeholder.");
+                            Log.Error("Supplied custom URL pattern must contain a filename placeholder.");
                             return false;
                         }
 
