@@ -9,6 +9,7 @@ namespace PdbGit
     using System.Collections.Generic;
     using System.Linq;
     using PdbGit.Providers;
+    using Shaman;
     using Shaman.Runtime;
 
     internal class HgRepository
@@ -27,7 +28,7 @@ namespace PdbGit
 
         public IReadOnlyList<string> GetRemotes()
         {
-            return ProcessUtils.RunFrom(path, "hg", "paths").Split('\n').Select(x => x.Trim()).Where(x => !string.IsNullOrEmpty(x)).ToList();
+            return ProcessUtils.RunFrom(path, "hg", "paths").Split('\n').Select(x => x.TryCaptureAfter(" = ")?.Trim()).Where(x => !string.IsNullOrEmpty(x)).ToList();
         }
     }
 }
